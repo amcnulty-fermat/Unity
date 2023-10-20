@@ -11,12 +11,12 @@ project('unity', 'c',
   version: run_command(
     [
       'auto/extract_version.py',
-      'src/unity.h'
+      '@0@/src/unity.h'.format(meson.project_source_root())
     ],
     check: true
   ).stdout().strip(),
 
-  meson_version: '>=0.47.0',
+  meson_version: '>=0.56.0',
   default_options: [
     'werror=true',
     'c_std=c11'
